@@ -9,7 +9,7 @@ const UserContext = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: actiontypes.FETCHING_START });
-    fetch(`${process.env.REACT_APP_SERVER_URL}users`)
+    fetch(`${process.env.REACT_APP_SERVER_URL}/users`)
       .then((res) => res.json())
       .then((data) => {
         dispatch({ type: actiontypes.FETCHING_SUCCESS, payload: data.data });
