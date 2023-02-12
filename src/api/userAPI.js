@@ -7,7 +7,7 @@ export const addUser = async (user) => {
     password: user.password,
   };
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}/users/${user.email}`,
+    `${process.env.REACT_APP_SERVER_URL}users/${user.email}`,
     {
       method: 'PUT',
       headers: {
@@ -22,7 +22,7 @@ export const addUser = async (user) => {
 // process.env.REACT_APP_SERVER_URL
 // get user from database
 export const getUser = async () => {
-  const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/users`, {
+  const response = await fetch(`${process.env.REACT_APP_SERVER_URL}users`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
