@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slide {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+}
+.prevSlide {
+  background-color: #3e084c;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+  z-index: 1;
+  transition: 0.3s;
+}
+.prevSlide:hover {
+  background-color: #653970;
+  transform: scale(1.1);
+}
+.nextSlide {
+  background-color: #3e084c;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  z-index: 1;
+  transition: 0.3s;
+}
+.nextSlide:hover {
+  background-color: #653970;
+  transform: scale(1.1);
+}
+.banner {
+  position: relative;
+}
+.slideimg {
+  width: 100vw;
+  height: 70vh;
+}
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: absolute;
+  top: 33%;
+  left: 10%;
+}
+.banner__title {
+  color: #3e084c;
+  font-size: 60px;
+  font-weight: 700;
+}
+.banner__discount {
+  color: #222222;
+  font-size: 24px;
+}
+.banner__btn {
+  background: #3e084c;
+  border: 1px solid #3e084c;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 60px;
+  outline: none;
+  overflow: hidden;
+  transition: 0.3s;
+  width: 213px;
+}
+.banner__btn:hover {
+  transform: scale(1.1);
+  background-color: #653970;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1000px) {
+  .banner__content {
+    gap: 16px;
   }
-  to {
-    transform: rotate(360deg);
+  .banner__title {
+    font-size: 32px;
+  }
+  .banner__discount {
+    font-size: 24px;
+  }
+  .banner__btn {
+    font-size: 20px;
+    height: 48px;
+    width: 120px;
+  }
+  .prevSlide {
+    font-size: 3rem;
+    right: 80px;
+  }
+  .nextSlide {
+    font-size: 3rem;
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .banner__content {
+    gap: 10px;
+  }
+  .slideimg {
+    height: 300px;
+  }
+  .banner__title {
+    font-size: 20px;
+  }
+  .banner__discount {
+    font-size: 14px;
+  }
+  .banner__btn {
+    font-size: 12px;
+    height: 32px;
+    width: 80px;
+  }
+  .prevSlide {
+    font-size: 2.5rem;
+    right: 75px;
+  }
+  .nextSlide {
+    font-size: 2.5rem;
+    right: 30px;
   }
 }
